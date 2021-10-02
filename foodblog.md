@@ -72,10 +72,6 @@ div.desc {
 }
 </style>
 
-<p>In this section of the website, I will be sharing traditional Nepalese, Indian and American style cooking that from my mom, wife and myself.</p>
-
-<hr>
-
 <div class="row"> 
   <div class="responsive">
   <div class="gallery">
@@ -508,10 +504,3 @@ div.desc {
   gtag('config', 'UA-123359651-1');
 </script>
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-5126027065024936",
-    enable_page_level_ads: true
-  });
-</script>
