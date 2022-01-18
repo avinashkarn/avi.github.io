@@ -1,10 +1,18 @@
 <center><h1>Privacy Policy</h1></center>
 
+<!-- particles.js exclusion -->
+<style>
+  #particles-js{
+      display: none;
+  }
+  
+</style>
+
 <i>DISCLAIMER: The postings expressed in this site are my own and are NOT shared, supported, or endorsed by any individual or organization.</i>
 
 https://AviKarn.com website follows the following privacy policy for all visitors on this website and its content:
 
-<li>  No personal information like Name, Age, Gender, Race etc are collected while a visitor is on any page of this website</li>
+<li>  No personal information such as: Name, Age, Gender, Race etc are collected while a visitor is on any page of this website</li>
 <li>  If a visitor makes a comment through third party integrations like disqus, social networks, their name and other details might be collected</li>
 <li>  https://AviKarn.com website has no payment requirement, hence no any credit card and banking details are collected</li>
 <li>  Google Analytics and Statcounter will be tracking visitors behavior</li>
