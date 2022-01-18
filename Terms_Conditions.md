@@ -12,7 +12,6 @@ layout: page
 
 <center> <h1> General Website Terms </h1> </center>
 
-<i>DISCLAIMER: The postings expressed in this site are my own and are NOT shared, supported, or endorsed by any individual or organization. </i>
 
 <h2> 1. Terms </h2>
 By accessing the website at https://AviKarn.com, you are agreeing to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. 
@@ -22,12 +21,15 @@ The materials contained in this website are protected by applicable copyright an
 <h2>2. Use License </h2>
 Permission is granted to temporarily download one copy of the materials (information or software) on https://AviKarn.com website for personal, non-commercial transitory viewing only.
 
-__You__ may not:
 
-<li>modify or copy the materials; </li>
-<li>use the materials for any commercial purpose, or for any public display (commercial or non-commercial); </li>
-<li>remove any copyright or other proprietary notations from the materials; or </li>
-<li>transfer the materials to another person or “mirror” the materials on any other server.</li>
+<h2> You may not:</h2>
+
+<center>
+  <li>modify or copy the materials; </li>
+  <li>use the materials for any commercial purpose, or for any public display (commercial or non-commercial); </li>
+  <li>remove any copyright or other proprietary notations from the materials; or </li>
+  <li>transfer the materials to another person or “mirror” the materials on any other server.</li>
+</center>
 
 <h2>3. Disclaimer </h2>
 The materials on https://AviKarn.com website are provided on an ‘as is’ basis. 
