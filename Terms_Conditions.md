@@ -2,6 +2,14 @@
 layout: page
 ---
 
+<!-- particles.js exclusion -->
+<style>
+  #particles-js{
+      display: none;
+  }
+  
+</style>
+
 <center> <h1> General Website Terms </h1> </center>
 
 <i>DISCLAIMER: The postings expressed in this site are my own and are NOT shared, supported, or endorsed by any individual or organization. </i>
