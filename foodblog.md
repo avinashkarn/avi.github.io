@@ -13,6 +13,9 @@ bigimg:
   - "/image/foodblog/nepalithali.jpg" : "Traditional Nepalese Thali"
 ---
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5126027065024936"
+     crossorigin="anonymous"></script>
+     
 <!-- particles.js exclusion -->
 <style>
   #particles-js{
