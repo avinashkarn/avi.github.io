@@ -747,6 +747,17 @@ head(pheno_BlUPs_noMissing)
 ```
 <br>
 
+The phenotype and numerical genotype data were intersected by the Taxa names in each data set, and any Taxa with missing data were removed from the GS analysis.
+
+```powershell
+
+## return all rows from x where there are matching values in y, and all columns from x and y
+intrsct_phenoGeno <- inner_join(pheno_BlUPs_noMissing, geno_numericThinImpu)
+
+dim(intrsct_phenoGeno)
+
+```
+
 Output:
 
 ```console
@@ -766,16 +777,6 @@ Output:
 ## 6    -0.2195389
 ```
 
-The phenotype and numerical genotype data were intersected by the Taxa names in each data set, and any Taxa with missing data were removed from the GS analysis.
-
-```powershell
-
-## return all rows from x where there are matching values in y, and all columns from x and y
-intrsct_phenoGeno <- inner_join(pheno_BlUPs_noMissing, geno_numericThinImpu)
-
-dim(intrsct_phenoGeno)
-
-```
 
 # 3.0 Genomic selection algorithms
 
