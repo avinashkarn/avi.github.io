@@ -754,7 +754,7 @@ The phenotype and numerical genotype data were intersected by the Taxa names in 
 ## return all rows from x where there are matching values in y, and all columns from x and y
 intrsct_phenoGeno <- inner_join(pheno_BlUPs_noMissing, geno_numericThinImpu)
 
-dim(intrsct_phenoGeno)
+head(intrsct_phenoGeno)
 
 ```
 
