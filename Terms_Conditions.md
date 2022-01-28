@@ -22,14 +22,14 @@ The materials contained in this website are protected by applicable copyright an
 Permission is granted to temporarily download one copy of the materials (information or software) on https://AviKarn.com website for personal, non-commercial transitory viewing only.
 
 
-<h2> You may not:</h2>
+<h2> Please do not:</h2>
 
-<center>
+<ul>
   <li>modify or copy the materials; </li>
   <li>use the materials for any commercial purpose, or for any public display (commercial or non-commercial); </li>
   <li>remove any copyright or other proprietary notations from the materials; or </li>
   <li>transfer the materials to another person or “mirror” the materials on any other server.</li>
-</center>
+</ul>
 
 <h2>3. Disclaimer </h2>
 The materials on https://AviKarn.com website are provided on an ‘as is’ basis. 
