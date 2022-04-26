@@ -196,6 +196,14 @@ Noam Reshef, <strong>Avinash Karn</strong>, David C Manns, Anna Katharine Mansfi
   <button type="submit" class="btn btn-lg btn-primary">Submit</button>
 </form>
 
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6LfU654fAAAAAEz-JDolCU1nMBAZuTrXuTqrroLO"></script>
+<script>
+grecaptcha.enterprise.ready(function() {
+    grecaptcha.enterprise.execute('6LfU654fAAAAAEz-JDolCU1nMBAZuTrXuTqrroLO', {action: 'login'}).then(function(token) {
+       ...
+    });
+});
+</script>
 
 <br>
 <div id="disqus_recommendations"></div>
