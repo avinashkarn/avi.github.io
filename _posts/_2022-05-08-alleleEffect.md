@@ -1,0 +1,109 @@
+---
+layout: post
+
+title: "Visualizing Allele Effects of a Genetic Marker on a Phenotype and Testing their Statistical Significance in R"
+tags: [Alleles, Allele Effect, Haplotype, ggStatsPlot. R]
+image: /image/alleleEffect/effect_plot.png
+share-img: /image/alleleEffect/effect_plot.png
+---
+
+
+
+Haploview software is a Java based open source software, developed by Broad institute at MIT for `haplotype analysis` and `LD visualization`. I recommend reading more about it at this <a href="https://www.broadinstitute.org/haploview/haploview"> Link </a> for in-depth information. 
+As per the documentatioin of this software, one can perform wide range of analyses such as `LD & haplotype block analysis`, `haplotype frequency estimation`, `association analysis`, and `visualization` and `plotting LD and haplotypes`. However, in this tutorial I will be showing the following key elements required to perform analyses in Haploview:
+
+- Downloading software and its system requirements 
+- Creating input files (.ped and .info)
+- Importing data in Haploview
+- Calcluating Haplotypes
+- Exporting Haplotypes'
+- Plotting LD heatmaps
+- Exporting LD plots
+
+<br>
+
+## 1. Download Haploview and Java Runtime Environment (JRE)
+
+Please download the software and the correct version of JAVA as per your operating system (i.e. Windows, MAC and Linux) at this link: <a href="/image/haploview/Haploview4.1.jar"> Download Haploview here </a> 
+
+- Haploview requires Java JRE 1.3 or later, but 1.4 is strongly recommended.
+- Requires min of 128M RAM
+
+
+## 2. Create input files (.ped and .info files)
+
+Haploview takes in a wide range input file formats, however, i am going to show how to modify your data in the `Linkage Format`. Please read the haploview documentation for more details.
+
+There two required files for `Linkage Format`: `.ped` and `.info` files. The details are below:
+
+### 2.1 .ped file
+
+`.ped` file (Linkage Pedigree) requires the columns for `familyID`, `individualNames`, `fatherName`, `motherName`, `gender`, `affected status` and `genotypes`
+
+__familyID__ : Individual's family name.
+
+__individual ID__ : Genotype IDs of the progeny
+
+__father's ID__ : Parent 1 name  or "0" if unknown father.
+
+__mother's ID__ : Parent 2 name or "0" if unknown mother.
+
+__sex__ : Individual's gender (1=MALE, 2=FEMALE).
+
+__affection status__ : Affection status to be used for association tests (0=UNKNOWN, 1=UNAFFECTED, 2=AFFECTED).
+
+__marker genotypes__ : Each marker calls in either ACGT or 1-4 format, where: 1=A, 2=C, 3=G, T=4. And 0 if missing data.
+
+
+For reference, please check out the screen shot of a sample `.ped` file below.
+
+<img src="/image/haploview/pedfile.png">
+
+{: .box-note}
+<i class="fa fa-commenting" aria-hidden="true"></i> **Note:** Please make sure there is NO header row as shown in the above screenshot, and its easier to modify your data in MS Excel.
+
+<br>
+
+### 2.2 .info file
+
+The .info file consists of two columns: `Marker names` and `Physical positions of the markers`
+
+For reference, please check out the screen shot of a sample `.info` file below.
+
+<img src="/image/haploview/infofile.png">
+
+{: .box-note}
+<i class="fa fa-commenting" aria-hidden="true"></i> **Note:** Please make sure there is NO header row as shown in the above screenshot and its easier to modify your data in MS Excel. Also, please remember the marker order in both .ped files and .info are in same order!
+
+<br>
+
+
+## 3. Download sample files 
+
+Please downnload sample .ped and .info files from below links:
+
+- <a href="/image/haploview/sample_chr4_haploviewFile.info" target="_blank">Download sample .INFO file here.</a>
+- <a href="/image/haploview/sample_chr4_haploviewFile.ped" target="_blank">Download sample .PED file here.</a>
+
+
+## 4. Importing and performing analysis in Haploview
+
+Once the .ped and .info files are ready, it can be imported by following the steps i have shown in below animation:
+
+<img src="/image/haploview/haploview_avikarn.gif">
+
+
+## 5. Screen shot of Haplotypes
+
+<img src="/image/haploview/haplotypes.PNG">
+
+
+## 6. Screen shot of LD heatmap
+
+<img src="/image/haploview/ldplot.PNG">
+
+
+__Thank you__ for reading this tutorial. I really hope these steps will assist in your analysis. If you have any questions or comments, please comment below or send an email. 
+
+<h3> Bibliography </h3>
+Barrett JC, Fry B, Maller J, Daly MJ. Haploview: analysis and visualization of LD and haplotype maps. Bioinformatics. 2005 Jan 15 [PubMed ID: 15297300]
