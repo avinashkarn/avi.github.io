@@ -8,102 +8,121 @@ share-img: /image/alleleEffect/effect_plot.png
 ---
 
 
+Ideally alleles or haplotype of a single or multiple markers identified post-GWAS or QTL analysis are used to evaluate their effect on a trait of interest. The goal of this tutorial is to visualize the allele effects of a genetic marker on a trait (phenotype) utilizing a R package <a href="https://indrajeetpatil.github.io/ggstatsplot/">ggstatsplot</a> developed by <a href="http://orcid.org/0000-0003-1995-6531">Indrajeet Patil</a>, and use its in-built parameters to test the statistical significance of the effect sizes. `ggstatsplot` produces publication quality figures with descriptive and inferential statisitcs, and requires minimal coding experience to analyze their data.
 
-Haploview software is a Java based open source software, developed by Broad institute at MIT for `haplotype analysis` and `LD visualization`. I recommend reading more about it at this <a href="https://www.broadinstitute.org/haploview/haploview"> Link </a> for in-depth information. 
-As per the documentatioin of this software, one can perform wide range of analyses such as `LD & haplotype block analysis`, `haplotype frequency estimation`, `association analysis`, and `visualization` and `plotting LD and haplotypes`. However, in this tutorial I will be showing the following key elements required to perform analyses in Haploview:
-
-- Downloading software and its system requirements 
-- Creating input files (.ped and .info)
-- Importing data in Haploview
-- Calcluating Haplotypes
-- Exporting Haplotypes'
-- Plotting LD heatmaps
-- Exporting LD plots
-
-<br>
-
-## 1. Download Haploview and Java Runtime Environment (JRE)
-
-Please download the software and the correct version of JAVA as per your operating system (i.e. Windows, MAC and Linux) at this link: <a href="/image/haploview/Haploview4.1.jar"> Download Haploview here </a> 
-
-- Haploview requires Java JRE 1.3 or later, but 1.4 is strongly recommended.
-- Requires min of 128M RAM
+- Install ggstatsplot in R 
+- Creating input file
+- Download sample file
+- Importing data in R environment
+- Plotting allele effect & Parameters
+- Citation
 
 
-## 2. Create input files (.ped and .info files)
+## 1. Install ggstatsplot in R 
 
-Haploview takes in a wide range input file formats, however, i am going to show how to modify your data in the `Linkage Format`. Please read the haploview documentation for more details.
+The latest version 0.9.1 of the `ggstatsplot` can be installed using the below code:
 
-There two required files for `Linkage Format`: `.ped` and `.info` files. The details are below:
+```console
+install.packages("ggstatsplot")
 
-### 2.1 .ped file
+library(ggstatsplot)
+```
+- ggstatsplot requires R version >=4.0 
 
-`.ped` file (Linkage Pedigree) requires the columns for `familyID`, `individualNames`, `fatherName`, `motherName`, `gender`, `affected status` and `genotypes`
+## 2. Creating input file
 
-__familyID__ : Individual's family name.
+An input file can be a text(.txt) or comma separated file (.csv) in a format shown in an screenshot below:
 
-__individual ID__ : Genotype IDs of the progeny
+<img src="/image/alleleEffect/input_format.PNG">
 
-__father's ID__ : Parent 1 name  or "0" if unknown father.
+Description of the columns or header in the file are:
 
-__mother's ID__ : Parent 2 name or "0" if unknown mother.
+__Genotypes__ : List of sample names
 
-__sex__ : Individual's gender (1=MALE, 2=FEMALE).
+__Phenotype__ : Column containing phenotypic data
 
-__affection status__ : Affection status to be used for association tests (0=UNKNOWN, 1=UNAFFECTED, 2=AFFECTED).
+__Marker_s10_1532223__ : Marker name and its allele calls of the corresponding samples
 
-__marker genotypes__ : Each marker calls in either ACGT or 1-4 format, where: 1=A, 2=C, 3=G, T=4. And 0 if missing data.
+## 3. Download sample file
+
+Please downnload sample file from below links:
+
+- <a href="/image/alleleEffect/inputFile.txt" target="_blank">Download sample input file here.</a>
 
 
-For reference, please check out the screen shot of a sample `.ped` file below.
+## 4. Importing data in R environment
 
-<img src="/image/haploview/pedfile.png">
+The input file can imported into R environment via below line of codes:
+
+```console
+library(ggstatsplot)
+
+input <- read.table("inputFile.txt", header = T)
+
+head(input)
+
+```
+
+Output -->
+
+```powershell
+
+> head(input)
+  Genotypes Phenotype Marker_s10_1532223
+1  Sample_1      2.00                  A
+2  Sample_2      2.00                  A
+3  Sample_3      2.50                  A
+4  Sample_4      2.75                  A
+5  Sample_5      3.00                  A
+6  Sample_8      3.00                  A
+```
+
 
 {: .box-note}
-<i class="fa fa-commenting" aria-hidden="true"></i> **Note:** Please make sure there is NO header row as shown in the above screenshot, and its easier to modify your data in MS Excel.
+<i class="fa fa-commenting" aria-hidden="true"></i> **Note:** Alleles of multiple markers can be added via concating the allele calls of a marker set for a list of sample. For example: A;G;A. Also, please remove any missing allele ("N") calls in the data or else it will be considered as an allele state and not treated as missing data.
+
+## 5. Plotting allele effect & Parameters
+
+Code to plot the allele effects using `ggbetweenstats` function:
+
+```powershell
+ggbetweenstats(
+  data  = input,
+  x     = Marker_s10_1532223 ,
+  y     = Phenotype   , type = "n", pairwise.comparisons = T,
+  xlab = "Alleles",
+  ylab = 'Phenotype',
+  title = "Allele Effects of the marker s10_1532223"
+)
+```
+Output -->
+
+<img src="/image/alleleEffect/effect_plot.png">
 
 <br>
 
-### 2.2 .info file
+Description of the parameters in the above code are:
 
-The .info file consists of two columns: `Marker names` and `Physical positions of the markers`
+__data__ : Obejct containing the input file
 
-For reference, please check out the screen shot of a sample `.info` file below.
+__x__ : X-axis of the marker containing allele/haplotype calls
 
-<img src="/image/haploview/infofile.png">
+__y__ : Y-axis of the phenotypic values
+
+__xlab__ : renaming x-axis label
+
+__ylab__ : renaming y-axis label
+
+__title__ : title of the plot
+
+__type__ : distribution of the data type
 
 {: .box-note}
-<i class="fa fa-commenting" aria-hidden="true"></i> **Note:** Please make sure there is NO header row as shown in the above screenshot and its easier to modify your data in MS Excel. Also, please remember the marker order in both .ped files and .info are in same order!
+<i class="fa fa-commenting" aria-hidden="true"></i> **Note:** You can define the distribution of your data, that is: parameteric or non-paratemeric using the `type` parameter, and perform `pairwise-comparison`. Also, if you have unbalanced data per group make sure `type=np` to calculate the non-parameteric pairwise-comparsion test a.k.a Dunn test.
 
-<br>
-
-
-## 3. Download sample files 
-
-Please downnload sample .ped and .info files from below links:
-
-- <a href="/image/haploview/sample_chr4_haploviewFile.info" target="_blank">Download sample .INFO file here.</a>
-- <a href="/image/haploview/sample_chr4_haploviewFile.ped" target="_blank">Download sample .PED file here.</a>
-
-
-## 4. Importing and performing analysis in Haploview
-
-Once the .ped and .info files are ready, it can be imported by following the steps i have shown in below animation:
-
-<img src="/image/haploview/haploview_avikarn.gif">
-
-
-## 5. Screen shot of Haplotypes
-
-<img src="/image/haploview/haplotypes.PNG">
-
-
-## 6. Screen shot of LD heatmap
-
-<img src="/image/haploview/ldplot.PNG">
-
+To see all supported plots and statistical analyses, see the package website: https://indrajeetpatil.github.io/ggstatsplot/
 
 __Thank you__ for reading this tutorial. I really hope these steps will assist in your analysis. If you have any questions or comments, please comment below or send an email. 
 
-<h3> Bibliography </h3>
-Barrett JC, Fry B, Maller J, Daly MJ. Haploview: analysis and visualization of LD and haplotype maps. Bioinformatics. 2005 Jan 15 [PubMed ID: 15297300]
+## 6. Citation
+<p>Patil, I. (2021). Visualizations with statistical details: The 'ggstatsplot' approach. Journal of Open Source Software, 6(61), 3167, doi:10.21105/joss.03167</p>
