@@ -24,7 +24,7 @@
 # List of links in the navigation bar
   navbar-links:
     About Me: "resume"
-    Tutorials:  "Home"
+    Blog:  "Home"
     Publications:
       - Google Scholar Profile: "https://scholar.google.com/citations?user=2XuofkoAAAAJ&hl=en"
       - ResearchGate Profile: "https://www.researchgate.net/profile/Avinash_Karn"
