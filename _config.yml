@@ -24,22 +24,7 @@
 # List of links in the navigation bar
   navbar-links:
     About Me: "resume"
-    Tutorials:
-      - GS Machine Learning: "https://avikarn.com/2020-08-01-GenomicSelection_ML_H2_G2F/"
-      - RNA-seq DF: "https://avikarn.com/2020-07-02-RNAseq_DeSeq2/"
-      - Genetic Mapping: "https://avikarn.com/2019-04-17-Genetic-Mapping-in-Lep-MAP3/"    
-      - AmpSeq Concept: "https://avikarn.com/2019-04-21-AmpSeq/"
-      - GBS SNP calling: "https://avikarn.com/2019-04-20-GBS-SNP-calling-tutorial/"      
-      - QTL in R: "https://avikarn.com/2019-04-23-composite-interval-mapping/"      
-      - SSR in TASSEL: "https://avikarn.com/2019-08-22-ssr/"
-      - QC Mendelian errors: "https://avikarn.com/2019-08-04-Mendel/"
-      - Prune Markers: "https://avikarn.com/2019-07-30-prunning/"
-      - GWAS in TASSEL: "https://avikarn.com/2019-07-22-GWAS/"
-      - ANOVA in R: "https://avikarn.com/2019-07-09-ANOVA/"
-      - Plot Genetic Map: "https://avikarn.com/2019-05-19-mapchart/"
-      - STRUCTURE software: "https://avikarn.com/2019-05-08-structure/"
-      - MDS analysis: "https://avikarn.com/2019-05-06-MDS/"
-      - Haploview LD haplotypes: "https://avikarn.com/2021-05-18-haploview1/"
+    Tutorials:  "Home"
     Publications:
       - Google Scholar Profile: "https://scholar.google.com/citations?user=2XuofkoAAAAJ&hl=en"
       - ResearchGate Profile: "https://www.researchgate.net/profile/Avinash_Karn"
