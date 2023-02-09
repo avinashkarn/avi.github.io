@@ -24,18 +24,19 @@
 # List of links in the navigation bar
   navbar-links:
     About Me: "resume"
-    Blog:  "index"
-    Publications:
+    Research:
       - Google Scholar Profile: "https://scholar.google.com/citations?user=2XuofkoAAAAJ&hl=en"
       - ResearchGate Profile: "https://www.researchgate.net/profile/Avinash_Karn"
       - ORCID profile: "https://orcid.org/0000-0001-9730-8922"
       - Publons Profile: "https://publons.com/researcher/1700487/avinash-karn/"
-    Astronomy: "astronomy"
-    Cooking: "foodblog"
-    Photography: "photography"
-    Stamp Collection: "https://photos.app.goo.gl/TR82ChGjvV4rp3F16"
-    Terms & Conditions: "Terms_Conditions"
-    Privacy Policy: "privacy_policy"
+    Hobbies:
+      - Astronomy: "astronomy"
+      - Cooking: "foodblog"
+      - Photography: "photography"
+      - Stamp Collection: "https://photos.app.goo.gl/TR82ChGjvV4rp3F16"
+    Website Policy:
+      - Terms & Conditions: "Terms_Conditions"
+      - Privacy Policy: "privacy_policy"
 #  nav-search: "search"
     #Resume: "resume"
     #Shop: "https://dealecommerce.com"
